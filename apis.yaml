@@ -95,22 +95,13 @@ spec:
       version: '0.1'
     openapi: 3.1.0
     paths:
-      "/dependencies/maven":
-        post:
+      "https://catfact.ninja/fact":
+        get:
           parameters:
-          - in: path
-            name: packages
-            required: true
-            schema:
-              type: string
-          - in: path
-            name: depMgmtPackages
-            required: true
-            schema:
-              type: string
           responses:
             '200':
-              "$ref": "#/components/responses/text/html"
+              application/json:
+                schema: StatusResponse
       "/dependencies/maven/status":
         get:
           parameters:
